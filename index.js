@@ -55,7 +55,7 @@ class Exercice {
 				this.seconds--;
 				this.updateCountdown();
 			}
-		}, 10);
+		}, 1000);
 
 		return (main.innerHTML = /* html */ `
 			<div class="exercice-container">
@@ -216,6 +216,9 @@ const page = {
 			/* html */ `<button id="start">Recommencer</button>`,
 			/* html */ `<button id="reboot" class="btn-reboot">Réinitialiser <i class="fas fat-times-circle"></i></button>`
 		);
+
+		start.addEventListener("click", () => this.routine());
+		reboot.addEventListener("click", () => utils.reboot());
 	},
 };
 page.lobby();
